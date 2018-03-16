@@ -17,7 +17,7 @@ public class JedisTest {
     @Test
     public void test1 () {
         // 创建 jedis 连接对象
-        Jedis jedis = new Jedis("47.100.183.227", 6379 );
+        Jedis jedis = new Jedis("127.0.0.1", 6379 );
         // 存值
         jedis.set( "name", "张三" );
         // 取值
@@ -44,7 +44,7 @@ public class JedisTest {
             jedisPoolConfig.setMaxIdle(10);
 
             // 获取 jedis 连接池对象
-            jedisPool = new JedisPool( jedisPoolConfig, "47.100.183.227", 6379 );
+            jedisPool = new JedisPool( jedisPoolConfig, "127.0.0.1", 6379 );
 
             // 获取 jedis 核心对象
             jedis = jedisPool.getResource();
